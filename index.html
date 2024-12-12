@@ -1,0 +1,78 @@
+<html>
+    <head>
+        <title>Anagram Checker By Vrishab</title>
+        <style>
+            *{font-size: 30px;}
+            body{background-color: lightgreen;}
+            p{width: 30%;
+            font-size: 20px;
+        text-align: center;}
+        
+
+        
+        </style>
+    </head>
+
+    <body>
+    <center>
+        <h1>Anagram Checker</h1>
+        <p>Anagram: A word, phrase, or name formed by rearranging the letters of another that has different meaning, such as silent, formed from listen.</p>
+
+       
+        <form onsubmit="ana()">
+            
+            <input type="text" id="txt1" placeholder="Enter First String"/>
+            <br/><br/>
+            <input type="text" id="txt2" placeholder="Enter Second String"/>
+            <br/><br/>
+            <input type="submit" value="Check"/>
+        </form>
+
+        <h2 id="msg"></h2>
+        <br/><br/><br/><br/><br/>
+        <h2 style="font-size: 20px; border:1px solid black; width:20%; color:rgb(255, 98, 0);">Guided By Kamal Sir</h2>
+    
+    </center>
+
+    <script>
+        function ana()
+        {
+            event.preventDefault();
+            let txt1=document.getElementById("txt1");
+            let txt2=document.getElementById("txt2");
+            let msg=   document.getElementById("msg");
+
+            if(txt1.value === "")
+            {
+                alert("The First string is empty");
+                msg.innerHTML="";
+                string.focus();
+                return;
+            }
+
+            if(txt2.value === "")
+            {
+                alert("The Second string is empty");
+                msg.innerHTML="";
+                txt2.focus();
+                return;
+            }
+
+            let og_txt1=txt1.value;
+            let sort_txt1= og_txt1.split("").sort().join("");
+            let og_txt2=txt2.value;
+            let sort_txt2= og_txt2.split("").sort().join("");
+
+            if(sort_txt1 === sort_txt2)
+            {
+                msg.innerHTML="Yes it is an Anagram";
+
+            }
+
+            else{
+                msg.innerHTML="No it is not an Anagram";
+            }
+        }
+    </script>
+    </body>
+</html>
